@@ -1,16 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwqjvrtk0k40"]
+[gd_scene load_steps=9 format=3 uid="uid://dwqjvrtk0k40"]
 
 [ext_resource type="Theme" uid="uid://dwl3yot0elbvx" path="res://theme_default.tres" id="1_ui4rj"]
 [ext_resource type="Shader" uid="uid://mp82odxwep2i" path="res://ui/main_menu.tres" id="2_iyv0n"]
-[ext_resource type="FontFile" uid="uid://b6oc8fcdvyeri" path="res://assets/fonts/CourierPrime-Bold.ttf" id="2_u3lgx"]
+[ext_resource type="Script" path="res://ui/main_menu.gd" id="2_p8s06"]
+[ext_resource type="FontFile" uid="uid://bgt0tm4jn73be" path="res://assets/fonts/Pinmolddemo-jEaxv.otf" id="4_vgmu3"]
+[ext_resource type="FontFile" uid="uid://onyymaj1aqej" path="res://assets/fonts/RobotoMono-SemiBold.ttf" id="5_203an"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lny5c"]
 shader = ExtResource("2_iyv0n")
 
 [sub_resource type="LabelSettings" id="LabelSettings_vkgpg"]
-font = ExtResource("2_u3lgx")
+font = ExtResource("4_vgmu3")
 font_size = 192
 font_color = Color(0.952941, 0.952941, 0.839216, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_awut7"]
+font = ExtResource("5_203an")
+font_size = 37
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -20,23 +26,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ui4rj")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = -83.0
-offset_top = -106.0
-offset_right = 317.0
-offset_bottom = 294.0
-color = Color(0.866667, 0.239216, 0.227451, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-visible = false
-layout_mode = 0
-offset_left = -351.0
-offset_top = -229.0
-offset_right = 149.0
-offset_bottom = 271.0
-color = Color(0.611765, 0.854902, 0.964706, 1)
+script = ExtResource("2_p8s06")
 
 [node name="BgColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_lny5c")
@@ -52,45 +42,62 @@ metadata/_edit_lock_ = true
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = 56.0
-offset_right = 344.0
-offset_bottom = -58.0
+offset_left = 64.0
+offset_right = 384.0
+offset_bottom = -56.0
 grow_vertical = 2
-theme_override_constants/separation = 32
+theme_override_constants/separation = 16
 alignment = 2
 
 [node name="StartButton" type="Button" parent="ButtonsHBox"]
-custom_minimum_size = Vector2(0, 64)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 28
 text = "START"
 
 [node name="SettingsButton" type="Button" parent="ButtonsHBox"]
-custom_minimum_size = Vector2(0, 64)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 28
 text = "OPTIONS"
 
 [node name="QuitButton" type="Button" parent="ButtonsHBox"]
-custom_minimum_size = Vector2(0, 64)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 28
 text = "QUIT"
 
-[node name="TitleLabel" type="Label" parent="."]
+[node name="HeadingLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -811.0
-offset_top = -271.0
-offset_right = -77.0
-offset_bottom = -26.0
+offset_left = -1945.0
+offset_top = -1036.0
+offset_right = -1211.0
+offset_bottom = -832.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "DSAVIZ"
 label_settings = SubResource("LabelSettings_vkgpg")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="SubHeadingLabel" type="Label" parent="HeadingLabel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "A Data Visualization Tool"
+label_settings = SubResource("LabelSettings_awut7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="ButtonsHBox/QuitButton" to="." method="_on_quit_button_pressed"]
