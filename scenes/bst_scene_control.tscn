@@ -1,0 +1,114 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2q31er5uottm"]
+
+[ext_resource type="Theme" uid="uid://dwl3yot0elbvx" path="res://theme_default.tres" id="1_363mx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j2q1e"]
+font_size = 36
+
+[node name="BstSceneControl" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_363mx")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 384.0
+offset_top = -80.0
+offset_right = -384.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "123"
+max_length = 16
+clear_button_enabled = true
+caret_blink = true
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+alignment = 2
+item_count = 2
+selected = 0
+fit_to_longest_item = false
+popup/item_0/text = "INSERT"
+popup/item_0/id = 0
+popup/item_1/text = "SEARCH"
+popup/item_1/id = 1
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "SUBMIT"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "TREE"
+label_settings = SubResource("LabelSettings_j2q1e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResetButton" type="Button" parent="MarginContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(128, 36)
+layout_mode = 2
+text = "RESET"
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 160.0
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer3"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer3/VBoxContainer"]
+layout_mode = 2
+text = "VIEW"
+label_settings = SubResource("LabelSettings_j2q1e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResetButton" type="Button" parent="MarginContainer3/VBoxContainer"]
+custom_minimum_size = Vector2(128, 36)
+layout_mode = 2
+text = "RESET"
