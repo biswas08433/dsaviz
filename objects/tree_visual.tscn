@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmck4awuxs8r1"]
+
+[ext_resource type="Script" path="res://objects/tree_visual.gd" id="1_j4roi"]
+
+[node name="TreeVisual" type="Node2D"]
+script = ExtResource("1_j4roi")

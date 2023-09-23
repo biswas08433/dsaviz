@@ -1,13 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dwqjvrtk0k40"]
+[gd_scene load_steps=7 format=3 uid="uid://dwqjvrtk0k40"]
 
 [ext_resource type="Theme" uid="uid://dwl3yot0elbvx" path="res://theme_default.tres" id="1_ui4rj"]
-[ext_resource type="Shader" uid="uid://mp82odxwep2i" path="res://ui/main_menu.tres" id="2_iyv0n"]
 [ext_resource type="Script" path="res://ui/main_menu.gd" id="2_p8s06"]
 [ext_resource type="FontFile" uid="uid://bgt0tm4jn73be" path="res://assets/fonts/Pinmolddemo-jEaxv.otf" id="4_vgmu3"]
 [ext_resource type="FontFile" uid="uid://onyymaj1aqej" path="res://assets/fonts/RobotoMono-SemiBold.ttf" id="5_203an"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lny5c"]
-shader = ExtResource("2_iyv0n")
 
 [sub_resource type="LabelSettings" id="LabelSettings_vkgpg"]
 font = ExtResource("4_vgmu3")
@@ -28,23 +24,13 @@ grow_vertical = 2
 theme = ExtResource("1_ui4rj")
 script = ExtResource("2_p8s06")
 
-[node name="BgColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_lny5c")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_lock_ = true
-
 [node name="ButtonsHBox" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_left = 64.0
 offset_right = 256.0
-offset_bottom = -56.0
+offset_bottom = -48.0
 grow_vertical = 2
 theme_override_constants/separation = 16
 alignment = 2

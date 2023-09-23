@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjdgmc1koj4n7"]
+
+[ext_resource type="Script" path="res://objects/viewer.gd" id="1_y22mt"]
+
+[node name="Viewer" type="Node2D"]
+script = ExtResource("1_y22mt")
+max_speed = 50
+
+[node name="Camera2D" type="Camera2D" parent="."]

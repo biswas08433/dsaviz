@@ -1,7 +1,6 @@
-[gd_resource type="Theme" load_steps=12 format=3 uid="uid://dwl3yot0elbvx"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://dwl3yot0elbvx"]
 
 [ext_resource type="FontFile" uid="uid://onyymaj1aqej" path="res://assets/fonts/RobotoMono-SemiBold.ttf" id="1_3umiy"]
-[ext_resource type="FontFile" uid="uid://invt3ew4furq" path="res://assets/fonts/Inter-Regular.ttf" id="1_og7ek"]
 [ext_resource type="StyleBox" uid="uid://dceaybsqswbim" path="res://theme_data/button_focus_stylebox.tres" id="2_dt5fc"]
 [ext_resource type="StyleBox" uid="uid://j1om8ffljceq" path="res://theme_data/button_hover_stylebox.tres" id="3_ls8wb"]
 [ext_resource type="StyleBox" uid="uid://b2ir3doxlhhrq" path="res://theme_data/button_normal_stylebox.tres" id="4_wyed4"]
@@ -18,7 +17,7 @@ bg_color = Color(0.866667, 0.239216, 0.227451, 1)
 
 [resource]
 default_base_scale = 1.0
-default_font = ExtResource("1_og7ek")
+default_font = ExtResource("5_5ufo8")
 default_font_size = 16
 Button/colors/font_color = Color(0.952941, 0.952941, 0.839216, 1)
 Button/colors/font_hover_color = Color(0, 0, 0, 1)
@@ -34,7 +33,7 @@ LineEdit/colors/font_color = Color(0.129412, 0.129412, 0.129412, 1)
 LineEdit/colors/font_placeholder_color = Color(0, 0, 0, 0.321569)
 LineEdit/colors/font_selected_color = Color(0.933333, 0.933333, 0.933333, 1)
 LineEdit/colors/selection_color = Color(0.317647, 0.482353, 0.847059, 1)
-LineEdit/constants/caret_width = 4
+LineEdit/constants/caret_width = 3
 LineEdit/font_sizes/font_size = 16
 LineEdit/fonts/font = ExtResource("5_5ufo8")
 LineEdit/styles/focus = ExtResource("6_fvyb0")

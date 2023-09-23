@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1acffp8kt4ux"]
+
+[ext_resource type="PackedScene" uid="uid://c2q31er5uottm" path="res://ui/bst_scene_control.tscn" id="1_cmgjy"]
+[ext_resource type="Script" path="res://scenes/bst_scene.gd" id="1_x8ly7"]
+[ext_resource type="PackedScene" uid="uid://bmck4awuxs8r1" path="res://objects/tree_visual.tscn" id="2_ws40v"]
+[ext_resource type="PackedScene" uid="uid://bjdgmc1koj4n7" path="res://objects/viewer.tscn" id="3_tt1kl"]
+[ext_resource type="Environment" uid="uid://dbeib2pu0k4gu" path="res://env_default.tres" id="5_4ug88"]
+
+[node name="BstScene" type="Node2D"]
+script = ExtResource("1_x8ly7")
+
+[node name="BstSceneControl" parent="." instance=ExtResource("1_cmgjy")]
+
+[node name="TreeVisual" parent="." instance=ExtResource("2_ws40v")]
+
+[node name="Viewer" parent="." instance=ExtResource("3_tt1kl")]
+max_speed = 10
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Viewer"]
+environment = ExtResource("5_4ug88")
+
+[connection signal="pressed" from="BstSceneControl/Control/ViewMarginContainer3/VBoxContainer/ResetButton" to="." method="_on_view_reset_button_pressed"]
+
+[editable path="BstSceneControl"]
