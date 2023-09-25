@@ -1,16 +1,22 @@
 extends Node2D
 
 @onready var viewer = $Viewer
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@onready var tree_visual = $TreeVisual
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 
-func _on_view_reset_button_pressed():
+func _on_bst_scene_control_view_reset():
+	#print("view reset")
 	viewer.reset()
+
+
+func _on_bst_scene_control_tree_reset():
+	#print("tree reset")
+	tree_visual.reset()
+
+
+func _on_bst_scene_control_submitted(value, op):
+	match op:
+		"INSERT" :
+			tree_visual.insert(int(value))

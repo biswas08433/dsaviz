@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2q31er5uottm"]
+[gd_scene load_steps=4 format=3 uid="uid://c2q31er5uottm"]
 
 [ext_resource type="Theme" uid="uid://dwl3yot0elbvx" path="res://theme_default.tres" id="1_363mx"]
+[ext_resource type="Script" path="res://ui/bst_scene_control.gd" id="1_y53dr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j2q1e"]
 font_size = 36
 
 [node name="BstSceneControl" type="CanvasLayer"]
+script = ExtResource("1_y53dr")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -14,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme = ExtResource("1_363mx")
 
 [node name="InputMarginContainer" type="MarginContainer" parent="Control"]
@@ -91,7 +94,7 @@ label_settings = SubResource("LabelSettings_j2q1e")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ResetButton" type="Button" parent="Control/TreeMarginContainer2/VBoxContainer"]
+[node name="TreeResetButton" type="Button" parent="Control/TreeMarginContainer2/VBoxContainer"]
 custom_minimum_size = Vector2(128, 36)
 layout_mode = 2
 text = "RESET"
@@ -116,7 +119,11 @@ label_settings = SubResource("LabelSettings_j2q1e")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ResetButton" type="Button" parent="Control/ViewMarginContainer3/VBoxContainer"]
+[node name="ViewResetButton" type="Button" parent="Control/ViewMarginContainer3/VBoxContainer"]
 custom_minimum_size = Vector2(128, 36)
 layout_mode = 2
 text = "RESET"
+
+[connection signal="pressed" from="Control/InputMarginContainer/HBoxContainer/SubmitButton" to="." method="_on_submit_button_pressed"]
+[connection signal="pressed" from="Control/TreeMarginContainer2/VBoxContainer/TreeResetButton" to="." method="_on_tree_reset_button_pressed"]
+[connection signal="pressed" from="Control/ViewMarginContainer3/VBoxContainer/ViewResetButton" to="." method="_on_view_reset_button_pressed"]
